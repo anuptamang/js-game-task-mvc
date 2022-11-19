@@ -50,15 +50,15 @@ class Model {
     return this.state
   }
 
-  _updateCounter() {
-    return (this.state.counter = this.state.initialData.length)
-  }
-
   updateOnMoveUp(item) {
     this.state.initialData = this.state.initialData?.filter(
       (data) => data.id !== item?.id
     )
     this._updateCounter()
+  }
+
+  _updateCounter() {
+    return (this.state.counter = this.state.initialData.length)
   }
 }
 
