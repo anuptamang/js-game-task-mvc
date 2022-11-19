@@ -1,4 +1,4 @@
-# Game Task with Webpack build.
+# Game Task with OOP / MVC pattern
 
 ## Setup
 
