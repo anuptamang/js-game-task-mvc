@@ -1,0 +1,59 @@
+[
+  {
+    "id": "101",
+    "figure": "circle"
+  },
+  {
+    "id": "102",
+    "figure": "rectangle"
+  },
+  {
+    "id": "103",
+    "figure": "square"
+  },
+  {
+    "id": "104",
+    "figure": "triangle"
+  },
+  {
+    "id": "105",
+    "figure": "star"
+  },
+  {
+    "id": "106",
+    "figure": "trapezoid"
+  },
+  {
+    "id": "107",
+    "figure": "rhombus"
+  },
+  {
+    "id": "108",
+    "figure": "pentagon"
+  },
+
+  {
+    "id": "109",
+    "figure": "hexagon"
+  },
+  {
+    "id": "110",
+    "figure": "ellipse"
+  },
+  {
+    "id": "111",
+    "figure": "chat"
+  },
+  {
+    "id": "112",
+    "figure": "close"
+  },
+  {
+    "id": "113",
+    "figure": "frame"
+  },
+  {
+    "id": "114",
+    "figure": "cross"
+  }
+]

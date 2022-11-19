@@ -1,0 +1,334 @@
+//Variables
+
+$dark-blue: #2c7da0;
+$green: #6a994e;
+$green-300: #bee6a8;
+$green-600: #355b20;
+$red: #ff0a54;
+$red-300: #ff8066;
+$blue: #00a6fb;
+$gray: #6c757d;
+$white: #fff;
+$light-gray: #d9d9d9;
+$black: #000;
+$purple: rgb(189, 22, 189);
+$purple-300: rgb(250, 109, 250);
+$purple-600: rgb(79, 10, 79);
+$yellow: rgb(241, 169, 66);
+$orange: rgb(236, 143, 12);
+
+$colors: blue, orange, green, purple, gray, red, yellow;
+$sizes: small, medium, large;
+
+@import 'normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  color: $black;
+}
+
+#app {
+  overflow: hidden;
+  position: relative;
+}
+
+.game-box {
+  width: 500px;
+  height: 330px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #6c757d;
+
+  &__screen {
+    height: calc(100% - 80px);
+    background: $white;
+    // padding: 30px;
+    border-radius: 8px;
+
+    &-holder {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      flex-wrap: wrap;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  &__panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__controller {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    .btn {
+      min-width: 20px;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    &-display {
+      width: 100px;
+      border-radius: 8px;
+      background: $white;
+      border: 5px solid $light-gray;
+      text-align: center;
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  color: $white;
+  background: $dark-blue;
+  text-transform: capitalize;
+  min-width: 110px;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &:hover,
+  &.active {
+    opacity: 0.6;
+  }
+
+  &--green {
+    background: $green;
+  }
+
+  &--red {
+    background: $red;
+  }
+
+  &--blue {
+    background: $blue;
+  }
+}
+
+.figure {
+  width: 70px;
+  height: 70px;
+  margin: 20px;
+  cursor: not-allowed;
+  background: $gray;
+  opacity: 0;
+  transition: all 0.3s linear;
+  position: absolute;
+  bottom: 0;
+
+  &.in {
+    opacity: 1;
+  }
+
+  &-circle {
+    border-radius: 100%;
+    background: $gray;
+  }
+
+  &-rectangle {
+    background: $gray;
+    width: 50px;
+  }
+
+  &-square {
+  }
+
+  &-triangle {
+    background: $gray;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  &-star {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+
+  &-trapezoid {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    background: $gray;
+  }
+
+  &-rhombus {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: $gray;
+  }
+
+  &-pentagon {
+    background: $gray;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  &-hexagon {
+    background: $gray;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  &-ellipse {
+    background: $gray;
+    clip-path: ellipse(25% 40% at 50% 50%);
+  }
+
+  &-chat {
+    background: $gray;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 75%,
+      75% 100%,
+      50% 75%,
+      0% 75%
+    );
+  }
+
+  &-close {
+    background: $gray;
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      30% 50%,
+      0% 80%,
+      20% 100%,
+      50% 70%,
+      80% 100%,
+      100% 80%,
+      70% 50%,
+      100% 20%,
+      80% 0%,
+      50% 30%
+    );
+  }
+
+  &-frame {
+    background: $gray;
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      25% 100%,
+      25% 25%,
+      75% 25%,
+      75% 75%,
+      25% 75%,
+      25% 100%,
+      100% 100%,
+      100% 0%
+    );
+  }
+
+  &-cross {
+    background: $gray;
+    clip-path: polygon(
+      10% 25%,
+      35% 25%,
+      35% 0%,
+      65% 0%,
+      65% 25%,
+      90% 25%,
+      90% 50%,
+      65% 50%,
+      65% 100%,
+      35% 100%,
+      35% 50%,
+      10% 50%
+    );
+  }
+
+  @each $color in $colors {
+    &.#{$color} {
+      background: #{$color};
+    }
+  }
+
+  @each $size in $sizes {
+    &.#{$size} {
+      @if $size == 'small' {
+        transform: scale(0.4);
+        // margin: 5px;
+      }
+
+      @if $size == 'medium' {
+        transform: scale(0.8);
+        // margin: 5px;
+      }
+
+      @if $size == 'large' {
+        transform: scale(1.2);
+        // margin: 5px;
+      }
+    }
+  }
+}
