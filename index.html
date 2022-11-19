@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Game Task</title>
+  <script defer src="/app.bundle.js"></script><link href="/app.css" rel="stylesheet"></head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="app">
+      <div class="game-box" data-game-box>
+        <div class="game-box__screen" data-game-screen>
+          <div class="game-box__screen-holder" data-game-screen-holder></div>
+        </div>
+        <div class="game-box__panel" data-game-panel>
+          <div class="game-box__controller" data-game-controller>
+            <button class="btn" data-game-controller-btn="start">Start</button>
+            <button class="btn btn--green" data-game-controller-btn="stop">
+              Stop
+            </button>
+          </div>
+          <div class="game-box__counter" data-game-counter>
+            <button class="btn btn--red" data-game-counter-btn="decrement">
+              -
+            </button>
+            <div class="game-box__counter-display" data-game-counter-display>
+              Counts: 0
+            </div>
+            <button class="btn btn--blue" data-game-counter-btn="increment">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
