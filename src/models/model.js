@@ -12,6 +12,10 @@ class Model {
     }
   }
 
+  _updateCounter() {
+    return (this.state.counter = this.state.initialData.length)
+  }
+
   addItem() {
     const itemToAdd = getUniqueCompareResult(
       this.state.data,
@@ -55,10 +59,6 @@ class Model {
       (data) => data.id !== item?.id
     )
     this._updateCounter()
-  }
-
-  _updateCounter() {
-    return (this.state.counter = this.state.initialData.length)
   }
 }
 
