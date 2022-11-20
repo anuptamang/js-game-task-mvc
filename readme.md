@@ -1,5 +1,7 @@
 # Game Task with OOP / MVC pattern
 
+### Live Preview: https://anuptamang.github.io/js-game-task-mvc/
+
 ## Setup
 
 `npm install`
