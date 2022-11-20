@@ -13,6 +13,7 @@ module.exports = {
     static: path.resolve(__dirname, './build'),
     compress: true,
     port: 4040,
+    open: true,
     hot: true,
     liveReload: false,
     headers: {
