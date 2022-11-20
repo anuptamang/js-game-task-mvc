@@ -11,3 +11,7 @@
 ## Build
 
 `npm run build`
+
+## Serve Build
+
+`serve build`

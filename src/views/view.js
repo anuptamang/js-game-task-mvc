@@ -53,7 +53,6 @@ class View {
   }
 
   _removeItem(item, state) {
-    console.log(item)
     this._itemRemoveFromDomView(item.id)
     this._updateCounter(state)
   }
